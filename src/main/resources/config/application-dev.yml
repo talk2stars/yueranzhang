@@ -41,8 +41,8 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://${MYSQL_URL}/jiuzhangquanzhanke?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
-        username: root
-        password: Aa19151799
+        username: ${MYSQL_USERNAME}
+        password: ${MYSQL_PW}
         hikari:
             data-source-properties:
                 cachePrepStmts: true
