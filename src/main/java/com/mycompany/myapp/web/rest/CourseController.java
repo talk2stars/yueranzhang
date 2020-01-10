@@ -4,7 +4,6 @@ import com.mycompany.myapp.domain.dto.CourseDto;
 import com.mycompany.myapp.domain.dto.CourseWithTNDto;
 import com.mycompany.myapp.service.CourseService;
 import io.swagger.annotations.Api;
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -23,7 +22,7 @@ public class CourseController {
 
     @GetMapping(path = "/api/course/findAllCourses", produces = "application/json")
     public HttpEntity<List<CourseDto>> findAllCourses(){
-        
+
         List<CourseDto> allCourses = courseService.findAllCourses();
 
         return new ResponseEntity<>(allCourses, HttpStatus.OK);
