@@ -1,4 +1,4 @@
-export interface CourseDto {
+export class CourseDto {
     courseName: string;
     courseLocation: string;
     courseContent: string;

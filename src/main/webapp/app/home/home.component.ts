@@ -19,10 +19,9 @@ export class HomeComponent implements OnInit {
     course_name_reg: string;
     course_location_reg: string;
     course_content_reg: string;
-    teacher_id_reg: number;
+    teacher_id_reg: string;
     courses: CourseDto[] = [];
     coursesWithTN: CourseWithTNDto[] = [];
-    newCourse: CourseDto;
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
@@ -69,12 +68,13 @@ export class HomeComponent implements OnInit {
         });
     }
 
-    addCourse(course_name_reg, course_location_reg, course_content_reg, teacher_id_reg) {
-        this.newCourse.courseName = course_name_reg;
-        this.newCourse.courseLocation = course_location_reg;
-        this.newCourse.courseContent = course_content_reg;
-        this.newCourse.teacherId = teacher_id_reg;
-        this.courseService.add(this.newCourse).subscribe(response => {
+    addCourse() {
+        const newCourse = new CourseDto();
+        newCourse.courseName = this.course_name_reg;
+        newCourse.courseLocation = this.course_location_reg;
+        newCourse.courseContent = this.course_content_reg;
+        newCourse.teacherId = this.teacher_id_reg;
+        this.courseService.add(newCourse).subscribe(response => {
             alert(response);
         });
     }

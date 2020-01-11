@@ -52,8 +52,8 @@ public class CourseController {
         }
     }
 
-    @PostMapping(path = "/api/course/addCourse", produces = "application/json")
-    public HttpStatus addCourse(@RequestBody @NotNull CourseDto course) {
+    @PostMapping(path = "/api/course/createCourse", produces = "application/json")
+    public HttpStatus createCourse(@RequestBody @NotNull CourseDto course) {
         try {
             courseService.addCourse(course);
             return HttpStatus.OK;
